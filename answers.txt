@@ -23,3 +23,39 @@ history
 ~/.dbshell
 ~/.mongodb/mongosh/.mongosh_repl_history
 tail -50 ~/.dbshell
+db.bounties.find({reward:{$gt: 100000} })
+db.bounties.find({reward:{$gt: 100000}})
+use bounties
+db.bounties.find({reward:{$gt: 100000}})
+use bounties
+db.bounties.find()
+show dbs
+use hunters
+db.bounties.find({reward:{$gt: 100000}})
+db.bounties.find({reward:{$lt: 100000}})
+db.bounties.find({reward:{$lte: 100000}})
+db.bounties.find({reward:{$lte: 1000}})
+db.bounties.find({reward:{$lt: 1000}})
+db.bounties.find({hunters: 'Nebula'})
+db.bounties.find({$or[{ship: 'Waverider'}, {ship: 'Serenity'}]})
+db.bounties.find({$or:[{ship: 'Waverider'}, {ship: 'Serenity'}]})
+db.bounties.find({captured: false}, {client: 'Ayesha High Priestess of the Sovereign'})
+db.bounties.find()
+db.bounties.update({$inc: {reward: 333333}})
+bd.bounties.update({name: true}, {$inc: {reward: 333333}})
+db.bounties.update({name: true}, {$inc: {reward: 333333}})
+db.bounties.update({captured: false}, {$inc: {reward: 333333}})
+db.bounties.find()
+db.bounties.update({captured: false}, {$inc: {reward: 333333}}, {multi: true})
+db.bounties.find()
+db.bounties.update({captured: false}, {$mul: {reward: 2}}, {multi: true}})
+db.bounties.update({captured: false}, {$mul: {reward: (2)}}, {multi: true}})
+db.bounties.update({captured: false}, {$mul: {reward: (2)}}, {multi: true})
+db.bounties.update({name: 'Malcolm Reynolds'}, {$push: {hunters: 'Bobba Fett'}})
+db.bounties.update({ship: 'Waverider'}, {$push: {hunters: 'Bobba Fett'}})
+db.bounties.update({}, {$pull: {hunters: 'Dengar'}})
+db.bounties.update({name: 'Han Solo'}, {lastSeen: 'Yesterday'}, {upsert: true})
+db.bounties.update({name: {$ne: 'Han Solo'}}, {lastSeen: 'Yesterday'}, {upsert: true})
+db.bounties.update({name: {$ne: 'Han Solo'}}, {lastSeen: 'Last Week'}, {upsert: true}, {multi: true})
+db.bounties.updateMany({name: {$ne: 'Han Solo'}}, {lastSeen: 'Last Week'}, {upsert: true})
+db.bounties.updateMany({name: {$ne: 'Han Solo'}}, {$set: {lastSeen: 'Last Week'}}, {upsert: true})
