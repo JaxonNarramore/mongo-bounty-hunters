@@ -1,1 +1,25 @@
 Please replace this text with ~50 lines of terminal history.
+use hunters
+db.createCollection('bounties')
+db.bounties.insert(   {     name: 'Han Solo',     wantedFor : 'Owing money',     client : 'Jabba the Hut',     reward : 1000000,     ship: 'Millennium Falcon',     hunters :['Bobba Fett', 'Dengar', 'IG-88', 'Zuckuss', 'Greedo', 'Bossk', '4-LOM'],     captured: false   }   )
+db.bounties.insert([{     name: 'Rocket',     wantedFor : 'Stealing Batteries',     client : 'Ayesha High Priestess of the Sovereign',     reward : 1000000000,     ship: 'The Milano',     hunters :['Nebula', 'Ravagers'],     captured: false   },   {     name: 'Sara Lance',     wantedFor : 'Screwing up the timeline, causing anachronisms',     client : 'Time Bureau',     reward : 50000,     ship: 'Waverider',     hunters :['Chronos'],     captured: false   },   {     name: 'Malcolm Reynolds',     wantedFor : 'Aiming to misbehave',     client : 'The Alliance',     reward : 40000,     ship: 'Serenity',     hunters :['Jubal Early'],     captured: false   },   {     name: 'Starbuck',     wantedFor : "Disobeying Captain's orders",     client : 'Captain Adama',     ship: 'Demetrius',     reward : 1000,     hunters :['Apollo'],     captured: true   } ])
+db.bounties.find()
+db.bounties.findOne({name: 'Time Bureau'})
+db.bounties.findOne({client: 'Time Bureau'})
+db.bounties.find({captured: true})
+db.bounties.insert(   {     name: 'Han Solo',     wantedFor : 'Owing money',     client : 'Jabba the Hut',     reward : 1000000,     ship: 'Millennium Falcon',     hunters :['Bobba Fett', 'Dengar', 'IG-88', 'Zuckuss', 'Greedo', 'Bossk', '4-LOM'],     captured: false   }   )
+db.bounties.insert(   {     name: 'Pete Savage',     wantedFor : 'Speed typing',     client : '10/19 Cohort',     reward : 1000000,     ship: 'X Wing',     hunters :['Bobba Fett', 'Dengar', 'IG-88', 'Zuckuss', 'Greedo', 'Bossk', '4-LOM'],     captured: false   }   )
+db.bounties.findOne({name: 'Pete Savage'})
+db.bounties.find({}, {name: true})
+db.bounties.remove({name: 'Starbuck'})
+db.bounties.find()
+db.bounties.remove({ObjectId("5fd7a5c55d2848270371ce3c")})
+db.bounties.remove({_id : ObjectId("5fd7a5c55d2848270371ce3c")})
+db.bounties.remove({_id : ObjectId("5fd7a5b25d2848270371ce3b")})
+db.bounties.find()
+db.bounties.update({name: 'Sara Lance'}, {$set: {name: 'White Canary'}})
+db.bounties.update({name: 'Rocket'}, {$set: {ship: 'The Milano 2'}})
+history
+~/.dbshell
+~/.mongodb/mongosh/.mongosh_repl_history
+tail -50 ~/.dbshell
